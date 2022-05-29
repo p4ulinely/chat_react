@@ -9,7 +9,7 @@ export const ChatProvider = ({children}) => {
 
     const insereNovaMsg = (body) => {
         const novaMsg = {body, user: { url: '', name: 'logged dude', color: '#000000'}}
-        setMsgs( prev => [...prev, novaMsg])
+        setMsgs(prev => [...prev, novaMsg])
     }
     
     const coletaMsgs = () => {

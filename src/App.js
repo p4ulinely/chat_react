@@ -60,7 +60,7 @@ const Chat = () => {
     }, [msgs])
 
     return (
-        <div>
+        <>
             <div className="Msgs-chat">
                 {msgs.length < 1 
                     ? 'carregando msgs...'
@@ -70,10 +70,10 @@ const Chat = () => {
                 }
             </div>
             <form>
-                <input value={bodyMessage} type="text" onChange={e => setBodyMessage(e.target.value)} placeholder='type ur msg...'/>
+                <input value={bodyMessage} type="text" onChange={e => setBodyMessage(e.target.value)} placeholder='digite sua msg'/>
                 <button onClick={handleSendMessageButton}>enviar</button>
             </form>
-        </div>
+        </>
     );    
 }
 
@@ -94,12 +94,12 @@ function App() {
             <h1>chat-app</h1>
             {!logged && <button onClick={handleJoinChatButton}>join chat</button>}
             {logged && 
-                <div>
+                <>
                     <button onClick={handleLeaveChatButton}>leave chat</button>
                     <ChatProvider>
                         <Chat />
                     </ChatProvider>
-                </div>}
+                </>}
         </div>
     );
 }
