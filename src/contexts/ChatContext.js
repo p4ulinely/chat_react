@@ -8,16 +8,39 @@ export const ChatProvider = ({children}) => {
     const temp = useRef(null)
 
     const insereNovaMsg = (body) => {
-        const novaMsg = {body, user: { url: '', name: 'logged dude', color: '#000000'}}
-        setMsgs(prev => [...prev, novaMsg])
+        const mockMsg = {
+          body, 
+          user: { 
+            url: '', 
+            name: 'logged dude', 
+            color: '#000000'
+          }
+        }
+
+        setMsgs(prev => [...prev, mockMsg])
     }
     
     const coletaMsgs = () => {
-        const msg1 = {body: 'oie caras..', user: { url: '', name: 'Dude1', color: '#000000'}}
-        const msg2 = {body: 'people soh bora..', user: { url: '', name: 'Dude2', color: '#555555'}}
+        const mockMsg1 = {
+          body: 'oie caras..',
+          user: { 
+            url: '',
+            name: 'Dude1', 
+            color: '#000000'
+          }
+        }
+
+        const mockMsg2 = {
+          body: 'people soh bora..', 
+          user: { 
+            url: '',
+            name: 'Dude2',
+            color: '#555555'
+          }
+        }
 
         temp.current = setInterval(() => {
-            setMsgs(prev => [...prev, msg1, msg2]) 
+            setMsgs(prev => [...prev, mockMsg1, mockMsg2]) 
             console.log('coletando msgs');
         }, 2000)
     }
